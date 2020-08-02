@@ -1,0 +1,17 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Search Results
+{% endblock %}
+
+{% block body %}
+    <h1>Matching Pages</h1>
+
+    <ul>
+        {% for entry in Substring_Matches %}
+            <li>
+                <a href="/wiki/{{ entry }}">{{ entry }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

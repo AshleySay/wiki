@@ -1,0 +1,19 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Create New Entry
+{% endblock %}
+
+{% block body %}
+    <h1>Submit a new entry:</h1>
+    <div class="form-group">
+        <form action="newpage.html" method="POST">
+            {% csrf_token %}
+            <label for="Title">Entry Title:</label>
+            <input type="text" class="form-control" name="EntryTitle" id="Title">
+            <label for="Content">Content:</label>
+            <textarea class="form-control" id="Content" name="EntryContent" rows="5"></textarea>
+            <button type="submit" class="btn btn-primary" style="margin-top: 5px">Submit</button>
+        </form>
+    </div>
+{% endblock %}
